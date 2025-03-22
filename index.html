@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .chartmobile {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for animation */
+        .color-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="header">🎨 Color
+        </h2>
+        <div class="chartmobile" id="colorChart"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const colors = [
+                "#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#A133FF", "#33FFF5", "#F5FF33", "#FF8C33", "#8C33FF", "#33FF8C",
+                "#FF3333", "#33FFA1", "#5733FF", "#FF33F5", "#33A1FF", "#A1FF33", "#C70039", "#900C3F", "#581845", "#1ABC9C",
+                "#3498DB", "#9B59B6", "#E74C3C", "#2ECC71", "#F1C40F", "#D35400", "#FFC300", "#DAF7A6", "#FF6F61", "#6B4226",
+                "#FFAA33", "#33A3FF", "#8BFF33", "#FF338B", "#B533FF", "#33FFF1", "#F5FF73", "#FFB833", "#8333FF", "#33FFB8",
+                "#FF3333", "#33FFAA", "#5733FF", "#FF73F5", "#33AAFF", "#A1FF73", "#FF5757", "#57FF33", "#3333FF", "#FF5733",
+                "#5D6D7E", "#1F618D", "#196F3D", "#F5B041", "#E67E22", "#A04000", "#E74C3C", "#9C640C", "#F4D03F", "#1C2833",
+                "#5DADE2", "#1ABC9C", "#76448A", "#C0392B", "#7D6608", "#641E16", "#17202A", "#E59866", "#D5DBDB", "#ECF0F1",
+                "#BB8FCE", "#58D68D", "#B03A2E", "#5499C7", "#48C9B0", "#2874A6", "#9B59B6", "#145A32", "#8E44AD", "#34495E",
+                "#BDC3C7", "#D4AC0D", "#641E16", "#512E5F", "#1E8449", "#154360", "#FF5733", "#33FF57", "#3357FF", "#FF33A1",
+                "#A133FF", "#33FFF5", "#F5FF33", "#FF8C33", "#8C33FF", "#33FF8C", "#FF4500", "#8A2BE2", "#00CED1"
+            ];
+            
+            const colorChart = document.getElementById("colorChart");
+            
+            colors.forEach(color => {
+                let colorBox = document.createElement("div");
+                colorBox.classList.add("color-box");
+                colorBox.style.background = color;
+                colorBox.textContent = color;
+                colorChart.appendChild(colorBox);
+            });
+        });
+    </script>
+</body>
+</html>
